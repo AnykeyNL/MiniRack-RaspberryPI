@@ -5,7 +5,7 @@
 //
 // Designed by the.anykey@gmail.com
 
-$fn=180;
+$fn=60;
 
 inner_w         = 222;      // Width within the rack
 outer_w         = 254;      // Total with, including mounting
@@ -29,7 +29,7 @@ drawer_type     = "WaveShare";
 front();
 
 // Show right drawer
-translate([5,-50,5])
+translate([5,0,5])
 drawer();
 
 // Show right drawer
