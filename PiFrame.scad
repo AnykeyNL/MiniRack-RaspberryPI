@@ -15,7 +15,13 @@ mount_margin    = 8.7375;   // Distance for mount holes from side
 depth           = 88;       // Depth of the slides and frame
 frontpanel_thick= 3;        // Front panel thickness
 
+// Drawer types - ONLY ENABLE! 
+// https://deskpi.com/products/deskpi-kl-p24-raspberry-pi-adapter-board
+//drawer_type     = "DeskPI";    
 
+// https://www.waveshare.com/wiki/Pi5-Connector-Adapter
+drawer_type     = "WaveShare"; 
+                            
 // INSTRUCTIONS:
 // Remark out the components you do not want. 
 
@@ -82,11 +88,31 @@ module drawer(){
  translate([95-49,23.5+58,1.5])
  pin(5);
  
+ if (drawer_type == "DeskPI") {
  // Mounting pins for DeskPi HDMI Breakout
  translate([95-49-18.5,23.5,1.5])
  pin(6.5);
  translate([95-49-18.5-17,23.5,1.5])
  pin(6.5);
+ }
+  
+ if (drawer_type == "WaveShare") {
+ // Mounting pins for Waceshare PI5 Connector Adapter Breakout
+ translate([95-49-9,23.5,1.5])
+ pin(6.5);
+ translate([95-49-9-27.5,23.5,1.5])
+ pin(6.5);
+ 
+ translate([95-49-9,23.5+58,1.5])
+ pin(6.5);
+ translate([95-49-9-27.5,23.5+58,1.5])
+ pin(6.5);
+ 
+ }
+ 
+ 
+ 
+ 
 }
 
 // Pin module
